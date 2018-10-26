@@ -1,0 +1,123 @@
+header
+{
+    margin-left: 10px;
+    font-family: 'Satisfy', cursive;
+    font-weight: normal;
+    text-align: center;
+}
+
+h1
+{
+    font-size: 60px;
+    margin: 15px 0 10px;
+}
+
+header p
+{
+    font-size: 26px;
+    margin: 0;
+}
+
+input.display
+{
+    display: none;
+}
+
+label[for='display']::before
+{
+    content: '';
+    margin-left: 10px;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+}
+
+input.display:not(:checked) + label[for='display']::before
+{
+    background: url('list.png');
+}
+
+input.display:not(:checked) ~ .cats > .cat-card
+{
+    display: inline-block;
+    width: 500px;
+}
+
+input.display:not(:checked) ~ .cats > .cat-card > img
+{
+    width: 500px;
+}
+
+input.display:not(:checked) ~ .cats .tile
+{
+    display: block;
+}
+
+input.display:not(:checked) ~ .cats .list
+{
+    display: none;
+}
+
+input.display:checked + label[for='display']::before
+{
+    background: url('tiles.png');
+}
+
+input.display:checked ~ .cats > .cat-card
+{
+    display: block;
+    width: 650px;
+}
+
+input.display:checked ~ .cats > .cat-card > img
+{
+    width: 650px;
+}
+
+input.display:checked ~ .cats .tile
+{
+    display: none;
+}
+
+input.display:checked ~ .cats .list
+{
+    display: block;
+}
+
+.cat-card
+{
+    width: 500px;
+    margin: 10px;
+}
+
+.cat-card:hover
+{
+    box-shadow: 3px 3px 5px 3px darkslategray;
+}
+
+.cat-card .description
+{
+    padding: 0 0 10px;
+    margin: 0 20px;
+    color: darkslategray;
+}
+
+.cat-card h2
+{
+    font-size: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cat-card p
+{
+    font-size: 20px;
+    margin: 10px 0;
+    line-height: 24px;
+}
+
+.cat-card > img
+{
+    width: 500px;
+}
