@@ -30,6 +30,21 @@ label[for='display']::before
     display: inline-block;
     width: 64px;
     height: 64px;
+    cursor: pointer;
+}
+
+@keyframes scaleMenu
+{
+    50%
+    {
+        transform: scale(1.1);
+    }
+}
+
+label[for='display']:hover::before
+{
+    animation-name: scaleMenu;
+    animation-duration: 1s;
 }
 
 input.display:not(:checked) + label[for='display']::before
@@ -88,6 +103,7 @@ input.display:checked ~ .cats .list
 {
     width: 500px;
     margin: 10px;
+    overflow: hidden;
 }
 
 .cat-card:hover
@@ -108,6 +124,14 @@ input.display:checked ~ .cats .list
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition-property: color, font-size;
+    transition-duration: .25s, .25s;
+}
+
+.cat-card h2:hover
+{
+    color: red;
+    font-size: 36px;
 }
 
 .cat-card p
@@ -115,9 +139,36 @@ input.display:checked ~ .cats .list
     font-size: 20px;
     margin: 10px 0;
     line-height: 24px;
+    transition-property: color;
+    transition-duration: .25s;
+}
+
+.cat-card p:hover
+{
+    color: red;
 }
 
 .cat-card > img
 {
     width: 500px;
+}
+
+@keyframes swingImg
+{
+    25%
+    {
+        transform: rotate(10deg);
+    }
+
+    75%
+    {
+        transform: rotate(-10deg);
+    }
+}
+
+.cat-card > img:hover
+{
+    animation-name: swingImg;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
 }
