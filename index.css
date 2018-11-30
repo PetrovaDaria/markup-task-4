@@ -124,14 +124,14 @@ input.display:checked ~ .cats .list
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition-property: color, font-size;
+    transition-property: color, transform;
     transition-duration: .25s, .25s;
 }
 
 .cat-card h2:hover
 {
     color: red;
-    font-size: 36px;
+    transform: scale(1.1) translateX(20px);
 }
 
 .cat-card p
